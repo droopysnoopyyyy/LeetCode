@@ -1,16 +1,16 @@
-#include <bits/stdc++.h>
+#include <vector>
+#include <iostream>
 using namespace std;
 class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        int n = nums.size();
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return {i, j};
+    public:
+        vector <int> twoSum (vector <int>& v, int target) {
+            for(int i = 0; i < v.size(); i++) {
+                for (int j = i+1; j < v.size(); j++) {
+                    if (v[i] + v[j] == target) {
+                        return {i, j};
+                    }
                 }
             }
+            return {};
         }
-        return {};
-    }
 };
