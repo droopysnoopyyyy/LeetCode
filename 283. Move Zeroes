@@ -1,0 +1,25 @@
+class Solution {
+public: 
+    void moveZeroes(vector<int>& nums) {
+        int length = nums.size();
+        int i = 1;
+        int* ptr_a = &nums[0];
+        int* ptr_b = &nums[i];
+        for(i; i < length; i++) {
+            if (*ptr_a == 0) {
+                if(*ptr_b != 0) {
+                    swap(*ptr_a, *ptr_b);
+                    ptr_a++;
+                    ptr_b++;
+                }
+                else {
+                    ptr_b++;
+                }            
+            }
+            else {
+                ptr_a++;
+                ptr_b++;
+            }
+        }
+    }
+};
