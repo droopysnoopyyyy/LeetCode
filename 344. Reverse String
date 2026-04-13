@@ -1,0 +1,16 @@
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        char temp;
+        int length = s.size() - 1;
+        char* ptr_a = &s[0];
+        char* ptr_b = &s[length];
+        for (int i = 0; ptr_a < ptr_b; i++) { 
+            temp = *ptr_a;
+            *ptr_a = *ptr_b;
+            *ptr_b = temp;
+            ptr_a++;
+            ptr_b--;
+        }
+    }
+};
